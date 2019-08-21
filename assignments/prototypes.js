@@ -71,6 +71,7 @@
 
 */
 
+//Task 1
 function Person(name, age){
   this.name = name;
   this.age = age;
@@ -92,6 +93,31 @@ console.log(mariam)
 mariam.poop()
 
 console.log(mariam)
+
+//Task 2
+function Car(model, carMake){
+  this.model = model;
+  this.carMake = carMake;
+  this.odometer = 0;
+  this.crashed = false;
+}
+
+Car.prototype.drive = function (distance) {
+  if(this.crashed)
+    return `I crashed at ${this.odometer} miles!`
+  this.odometer += Number(distance)
+  return `Vroom vroom, we at ${this.odometer} miles now, baby!`;
+}
+
+Car.prototype.crash = function () {
+  this.crashed = true;
+}
+
+Car.prototype.repair = function () { this.crashed = false; }
+
+var aCar = new Car('YC', 'BMW');
+
+//Task 3
 
 /*
 
