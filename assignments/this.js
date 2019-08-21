@@ -33,7 +33,21 @@ let myNameObject = {
 // Principle 3
 
 // code example for New Binding
+function Food(name, type){
+    this.name = name;
+    this.type = type;
+}
+
+var Ricey = Food('Rice', 'Cereal');
 
 // Principle 4
 
 // code example for Explicit Binding
+function explicitExample(who){
+    console.log(this)
+    return (`I am ${who}`);
+}
+explicitExample('She', 'kiyani')
+explicitExample.call('newExplicitScope', 'mariam')
+
+var clone = explicitExample.bind('newerExplicitScope');
