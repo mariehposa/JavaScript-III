@@ -106,7 +106,7 @@ Car.prototype.drive = function (distance) {
   if(this.crashed)
     return `I crashed at ${this.odometer} miles!`
   this.odometer += Number(distance)
-  return `Vroom vroom, we at ${this.odometer} miles now, baby!`;
+  return `I did not crash and i am at ${this.odometer} miles now`;
 }
 
 Car.prototype.crash = function () {
@@ -118,7 +118,15 @@ Car.prototype.repair = function () { this.crashed = false; }
 var aCar = new Car('YC', 'BMW');
 
 //Task 3
+function Baby(name, age) {
+  Person.call(this, name, age)
+}
 
+Baby.prototype = Object.create(Person.prototype);
+
+Baby.prototype.play = function () { return `I love to play and I am ${this.age} years old...`}
+
+var mine = new Baby('Mine', 3)
 /*
 
   STRETCH TASK
