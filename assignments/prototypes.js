@@ -71,6 +71,28 @@
 
 */
 
+function Person(name, age){
+  this.name = name;
+  this.age = age;
+  this.stomach = [];
+}
+
+Person.prototype.eat = function (edible) {
+  this.stomach.push(edible)
+}
+
+Person.prototype.poop = function () { this.stomach = [] }
+
+const mariam = new Person("Mariam", 23)
+
+mariam.eat('rice')
+
+console.log(mariam)
+
+mariam.poop()
+
+console.log(mariam)
+
 /*
 
   STRETCH TASK
