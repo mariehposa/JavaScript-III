@@ -127,6 +127,29 @@ Baby.prototype = Object.create(Person.prototype);
 Baby.prototype.play = function () { return `I love to play and I am ${this.age} years old...`}
 
 var mine = new Baby('Mine', 3)
+
+//Task 4
+function Truck(age, type){
+  this.age = age;
+  this.type = type;
+  this.tankLevel = 10;
+  this.miles = 0;
+}
+
+Truck.prototype.drive = function (miles) {
+  if(Number(miles) <= this.tankLevel){
+    this.miles += Number(miles)
+    return `We have covered ${miles} miles`
+  }
+
+  return `Fuels tank is not sufficient, maybe refill.`
+}
+
+Truck.prototype.refill = function (litres) { this.tankLevel += Number(litres)}
+
+var truck = new Truck(2, 'Toyota')
+
+
 /*
 
   STRETCH TASK
