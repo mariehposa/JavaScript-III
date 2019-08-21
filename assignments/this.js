@@ -12,10 +12,23 @@
 // Principle 1
 
 // code example for Window Binding
+var windowBindingName = "I am here to test window binding";
+
+function windowCall(){
+    console.log(this.windowBindingName)
+    return this;
+}
 
 // Principle 2
 
 // code example for Implicit Binding
+let myNameObject = {
+    myName: "Mariam",
+    myNameFunction: function () {
+        console.log(`My name is ${this.myName}`)
+        return this;
+    },
+}
 
 // Principle 3
 
