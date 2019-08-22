@@ -18,7 +18,7 @@ function windowCall(){
     console.log(this.windowBindingName)
     return this;
 }
-
+windowCall();
 // Principle 2
 
 // code example for Implicit Binding
@@ -30,24 +30,28 @@ let myNameObject = {
     },
 }
 
+myNameObject.aa = function (){return this;}
 // Principle 3
 
 // code example for New Binding
-function Food(name, type){
+function Food(name, type, price){
     this.name = name;
     this.type = type;
+    this.price = price;
+    this.isHot = true;
 }
 
-var Ricey = Food('Rice', 'Cereal');
+var Ricey = new  Food('Rice', 'Cereal', 'N500');
 
+var beans =  new Food('Beans', 'Legume', 'N150')
 // Principle 4
-
+var name = 'Kiyani'
 // code example for Explicit Binding
-function explicitExample(who){
+function explicitExample(){
     console.log(this)
-    return (`I am ${who}`);
+    return (`I am ${this.name}`);
 }
-explicitExample('She', 'kiyani')
-explicitExample.call('newExplicitScope', 'mariam')
+explicitExample()
+explicitExample.call(beans)
 
-var clone = explicitExample.bind('newerExplicitScope');
+var clone = explicitExample.bind(rice);

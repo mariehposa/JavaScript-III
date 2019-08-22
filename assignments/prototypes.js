@@ -82,7 +82,9 @@ Person.prototype.eat = function (edible) {
   this.stomach.push(edible)
 }
 
-Person.prototype.poop = function () { this.stomach = [] }
+Person.prototype.poop = function () { 
+  this.stomach = [] 
+}
 
 const mariam = new Person("Mariam", 23)
 
